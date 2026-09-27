@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Solis Mental Health</title>
+  <meta name="description" content="Contact Solis Mental Health in Palo Alto.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who we are</a>
+        <a href="initiatives.html">Initiatives</a>
+        <a href="resources.html">Resources</a>
+        <div class="more"><button class="more-btn" type="button" aria-expanded="false" aria-current="true">More</button><div class="more-menu"><a href="statistics.html">Statistics</a><a href="stories.html">Stories</a><a href="donate.html">Donate</a><a href="lesson-slides.html">Lesson slides</a><a href="contact.html" aria-current="page">Contact</a><a href="forum.html">Forum</a></div></div>
+      </nav>
+      <a class="logo" href="index.html">Solis</a>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-top">
+      <div class="wrap narrow">
+        <p class="kicker">Contact</p>
+        <h2>Get in touch</h2>
+        <p><strong>Base</strong><br>Palo Alto, CA</p>
+        <p><strong>Email</strong><br><a href="mailto:solismentalhealth@gmail.com">solismentalhealth@gmail.com</a></p>
+        <form id="contact-form">
+          <label>First name<input name="first" required></label>
+          <label>Last name<input name="last"></label>
+          <label>Email<input name="email" type="email" required></label>
+          <label>Write a message<textarea name="message" required></textarea></label>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      var body = "First name: " + data.get("first") + "\nLast name: " + data.get("last") + "\nEmail: " + data.get("email") + "\n\n" + data.get("message");
+      window.location.href = "mailto:solismentalhealth@gmail.com?subject=" + encodeURIComponent("Message from the Solis website") + "&body=" + encodeURIComponent(body);
+    });
+  </script>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="logo">Solis</p>
+        <p><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms &amp; conditions</a></p>
+        <p><a href="mailto:solismentalhealth@gmail.com">solismentalhealth@gmail.com</a></p>
+        <p>© 2022 by Solis</p>
+      </div>
+      <p class="note">If you are in crisis in the United States, call or text 988.</p>
+    </div>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

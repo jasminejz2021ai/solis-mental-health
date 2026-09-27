@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stories | Solis Mental Health</title>
+  <meta name="description" content="Share a mental health story with Solis.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who we are</a>
+        <a href="initiatives.html">Initiatives</a>
+        <a href="resources.html">Resources</a>
+        <div class="more"><button class="more-btn" type="button" aria-expanded="false" aria-current="true">More</button><div class="more-menu"><a href="statistics.html">Statistics</a><a href="stories.html" aria-current="page">Stories</a><a href="donate.html">Donate</a><a href="lesson-slides.html">Lesson slides</a><a href="contact.html">Contact</a><a href="forum.html">Forum</a></div></div>
+      </nav>
+      <a class="logo" href="index.html">Solis</a>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-top">
+      <div class="wrap narrow">
+        <p class="kicker">Stories</p>
+        <h2>Tell your story</h2>
+        <p>Have you overcome struggles with mental health, or are you currently battling with one? Speak up. Tell your story here at Solis.</p>
+        <p class="note">Trigger warning: content may contain mentions of suicide, depression, and similar topics.</p>
+        <h3>Publish your story on Solis</h3>
+        <p class="note">Thank you for sharing. Your story will be reviewed and can be published on Solis if approved. This form opens your email app.</p>
+        <form id="story-form">
+          <label>Email<input name="email" type="email" required></label>
+          <label>Name (doesn't have to be real if you prefer to stay anonymous)<input name="name" required></label>
+          <label>Your story<textarea name="story" required></textarea></label>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  <script>
+    document.getElementById("story-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      var body = "Name: " + data.get("name") + "\nEmail: " + data.get("email") + "\n\n" + data.get("story");
+      window.location.href = "mailto:solismentalhealth@gmail.com?subject=" + encodeURIComponent("Story for Solis") + "&body=" + encodeURIComponent(body);
+    });
+  </script>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="logo">Solis</p>
+        <p><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms &amp; conditions</a></p>
+        <p><a href="mailto:solismentalhealth@gmail.com">solismentalhealth@gmail.com</a></p>
+        <p>© 2022 by Solis</p>
+      </div>
+      <p class="note">If you are in crisis in the United States, call or text 988.</p>
+    </div>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>
